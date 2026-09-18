@@ -1,0 +1,64 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model AdminUser {
+  id           Int      @id @default(autoincrement())
+  username     String   @unique
+  passwordHash String
+  createdAt    DateTime @default(now())
+}
+
+model Skill {
+  id     Int    @id @default(autoincrement())
+  name   String
+  years  Int
+  level  Int // 0-100, used for the skill bar fill
+  desc   String
+  order  Int    @default(0)
+}
+
+model Project {
+  id        Int      @id @default(autoincrement())
+  num       String // display index, e.g. "01"
+  title     String
+  desc      String
+  stack     String[] // e.g. ["React", "PostgreSQL"]
+  githubUrl String?
+  liveUrl   String?
+  order     Int      @default(0)
+}
+
+model Experience {
+  id      Int    @id @default(autoincrement())
+  year    String
+  role    String
+  company String
+  desc    String
+  order   Int    @default(0)
+}
+
+// Single-row table holding the About section copy + stat counters.
+model Bio {
+  id         Int    @id @default(autoincrement())
+  heading    String
+  paragraph1 String
+  paragraph2 String
+  stats      Json // [{ "value": "15+", "label": "Projects shipped" }, ...]
+}
+
+// Single-row table holding site-wide identity, contact + footer info so
+// the contact section and footer are editable from the admin dashboard.
+model Profile {
+  id          Int    @id @default(autoincrement())
+  name        String
+  email       String
+  githubUrl   String
+  linkedinUrl String
+  footerNote  String
+}

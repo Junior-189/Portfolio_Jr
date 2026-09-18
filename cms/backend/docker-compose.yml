@@ -1,0 +1,18 @@
+# Local-only Postgres for development. This does not run in production -
+# point DATABASE_URL at whatever Postgres/MongoDB instance you actually
+# host the CMS on.
+services:
+  postgres:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: portfolio
+      POSTGRES_PASSWORD: portfolio
+      POSTGRES_DB: portfolio
+    ports:
+      - "5432:5432"
+    volumes:
+      - portfolio_pgdata:/var/lib/postgresql/data
+
+volumes:
+  portfolio_pgdata:

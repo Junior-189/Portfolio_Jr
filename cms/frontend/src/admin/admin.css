@@ -1,0 +1,31 @@
+/* Minimal, monochrome admin UI — deliberately plain so editing content
+   is fast and unambiguous. Not meant to match the public site's flair. */
+.adm{ font-family:'JetBrains Mono','Courier New',monospace; background:#0b0b0b; color:#eee; min-height:100vh; }
+.adm a{ color:#eee; }
+.adm-header{ display:flex; justify-content:space-between; align-items:center; padding:16px 28px; border-bottom:1px solid #262626; }
+.adm-header h1{ font-size:15px; letter-spacing:1px; }
+.adm-btn{ background:none; border:1px solid #3a3a3a; color:#eee; padding:8px 16px; font-family:inherit; font-size:12px; cursor:pointer; letter-spacing:0.5px; }
+.adm-btn:hover{ border-color:#eee; }
+.adm-btn.primary{ background:#eee; color:#0b0b0b; border-color:#eee; }
+.adm-btn.danger{ border-color:#7a2323; color:#e28a8a; }
+.adm-btn.danger:hover{ background:#2a1010; }
+.adm-shell{ max-width:1000px; margin:0 auto; padding:32px 24px 80px; }
+.adm-tabs{ display:flex; gap:8px; margin-bottom:24px; flex-wrap:wrap; }
+.adm-tab{ padding:8px 18px; border:1px solid #262626; background:none; color:#999; font-family:inherit; font-size:12px; cursor:pointer; text-transform:uppercase; letter-spacing:1px; }
+.adm-tab.active{ color:#eee; border-color:#eee; }
+.adm-card{ border:1px solid #262626; padding:18px; margin-bottom:14px; background:#0f0f0f; }
+.adm-row{ display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:10px; }
+.adm-field{ display:flex; flex-direction:column; gap:4px; }
+.adm-field label{ font-size:10px; color:#888; text-transform:uppercase; letter-spacing:1px; }
+.adm-field input, .adm-field textarea{ background:#151515; border:1px solid #2c2c2c; color:#eee; padding:9px 10px; font-family:inherit; font-size:13px; }
+.adm-field textarea{ resize:vertical; min-height:60px; }
+.adm-field input:focus, .adm-field textarea:focus{ outline:none; border-color:#666; }
+.adm-card-actions{ display:flex; gap:10px; margin-top:10px; justify-content:flex-end; }
+.adm-add{ display:flex; justify-content:center; padding:16px; border:1px dashed #333; color:#888; cursor:pointer; background:none; width:100%; font-family:inherit; font-size:12px; text-transform:uppercase; letter-spacing:1px; }
+.adm-add:hover{ border-color:#666; color:#eee; }
+.adm-login-wrap{ display:flex; align-items:center; justify-content:center; min-height:100vh; }
+.adm-login-box{ width:320px; border:1px solid #262626; padding:32px 28px; }
+.adm-login-box h1{ font-size:16px; margin-bottom:24px; text-align:center; letter-spacing:1px; }
+.adm-error{ color:#e28a8a; font-size:12px; margin-top:10px; }
+.adm-hint{ color:#666; font-size:11px; margin-top:18px; line-height:1.6; }
+.adm-status{ font-size:11px; color:#888; }
